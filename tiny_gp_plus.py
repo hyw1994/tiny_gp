@@ -1,11 +1,13 @@
+# tiny genetic programming plus, by © moshe sipper, www.moshesipper.com
+# graphic output, dynamic progress display, bloat-control option 
+# need to install https://pypi.org/project/graphviz/
+
 from random import random, randint, seed
 from statistics import mean
 from copy import deepcopy
 import matplotlib.pyplot as plt
 from IPython.display import Image, display
 from graphviz import Digraph, Source 
-import numpy as np
-import re
 
 POP_SIZE        = 60    # population size
 MIN_DEPTH       = 2     # minimal initial random tree depth
@@ -20,18 +22,16 @@ def add(x, y): return x + y
 def sub(x, y): return x - y
 def mul(x, y): return x * y
 FUNCTIONS = [add, sub, mul]
-TERMINALS = ['x', 0, 1, 2, 3, 4] 
+TERMINALS = ['x', -2, -1, 0, 1, 2] 
 
-def isprime(n):
-    return re.compile(r'^1?$|^(11+)\1+$').match('1' * n) is None
+def target_func(x): # evolution's target
+    return x*x + x + 17
 
-vfunc_isprime = np.vectorize(isprime)
-
-# def target_func(x): # evolution's target
-#     return x*x*x*x + x*x*x + x*x + x + 1
-
-def generate_dataset(n): # generate 101 data points from target_func
-    dataset = list(range(0, n))
+def generate_dataset(): # generate 101 data points from target_func
+    dataset = []
+    for x in range(-100,101,2): 
+        x /= 100
+        dataset.append([x, target_func(x)])
     return dataset
 
 class GPTree:
@@ -148,11 +148,7 @@ def init_population(): # ramped half-and-half
     return pop
 
 def error(individual, dataset):
-    samples = [individual.compute_tree(ds) for ds in dataset]
-    unique = np.unique(samples)
-    num_prime = sum(vfunc_isprime(unique))
-    
-    return 1-num_prime/len(samples)
+    return mean([abs(individual.compute_tree(ds[0]) - ds[1]) for ds in dataset])
 
 def fitness(individual, dataset): 
     if BLOAT_CONTROL:
@@ -200,7 +196,7 @@ def plot(axarr, line, xdata, ydata, gen, pop, errors, max_mean_size):
 def main():      
     # init stuff
     seed() # init internal state of random number generator
-    dataset = generate_dataset(20)
+    dataset = generate_dataset()
     population= init_population() 
     best_of_run = None
     best_of_run_error = 1e20 
