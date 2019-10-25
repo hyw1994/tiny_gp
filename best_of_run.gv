@@ -1,0 +1,38 @@
+digraph {
+	graph [label="
+
+best_of_run attained at gen 206 and has error=0.2"]
+	0 [label=add]
+	0 -> 1
+	1 [label=add]
+	1 -> 2
+	2 [label=sub]
+	2 -> 3
+	3 [label=add]
+	3 -> 4
+	4 [label=add]
+	4 -> 5
+	5 [label=3]
+	4 -> 6
+	6 [label=2]
+	3 -> 7
+	7 [label=sub]
+	7 -> 8
+	8 [label=2]
+	7 -> 9
+	9 [label=x]
+	2 -> 10
+	10 [label=0]
+	1 -> 11
+	11 [label=add]
+	11 -> 12
+	12 [label=3]
+	11 -> 13
+	13 [label=1]
+	0 -> 14
+	14 [label=mul]
+	14 -> 15
+	15 [label=x]
+	14 -> 16
+	16 [label=x]
+}
