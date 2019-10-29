@@ -1,60 +1,60 @@
 digraph {
 	graph [label="
 
-best_of_run attained at gen 6 and has error=0.0"]
+best_of_run attained at gen 48 and has error=0.0"]
 	0 [label=sub]
 	0 -> 1
-	1 [label=add]
+	1 [label=sub]
 	1 -> 2
 	2 [label=mul]
 	2 -> 3
 	3 [label=x]
 	2 -> 4
-	4 [label=sub]
-	4 -> 5
-	5 [label=x]
-	4 -> 6
-	6 [label=0]
-	1 -> 7
-	7 [label=sub]
-	7 -> 8
+	4 [label=x]
+	1 -> 5
+	5 [label=add]
+	5 -> 6
+	6 [label=1]
+	5 -> 7
+	7 [label=-2]
+	0 -> 8
 	8 [label=sub]
 	8 -> 9
-	9 [label=sub]
+	9 [label=mul]
 	9 -> 10
-	10 [label=x]
-	9 -> 11
-	11 [label=-1]
-	8 -> 12
-	12 [label=sub]
+	10 [label=add]
+	10 -> 11
+	11 [label=add]
+	11 -> 12
+	12 [label=mul]
 	12 -> 13
-	13 [label=1]
+	13 [label=2]
 	12 -> 14
-	14 [label=1]
-	7 -> 15
-	15 [label=add]
+	14 [label=2]
+	11 -> 15
+	15 [label=sub]
 	15 -> 16
-	16 [label=add]
-	16 -> 17
-	17 [label=0]
-	16 -> 18
-	18 [label=1]
-	15 -> 19
-	19 [label=mul]
-	19 -> 20
-	20 [label=2]
-	19 -> 21
-	21 [label=-2]
-	0 -> 22
-	22 [label=sub]
+	16 [label=0]
+	15 -> 17
+	17 [label=mul]
+	17 -> 18
+	18 [label=sub]
+	18 -> 19
+	19 [label=0]
+	18 -> 20
+	20 [label=0]
+	17 -> 21
+	21 [label=sub]
+	21 -> 22
+	22 [label=mul]
 	22 -> 23
-	23 [label=sub]
+	23 [label=add]
 	23 -> 24
-	24 [label=mul]
+	24 [label=add]
 	24 -> 25
-	25 [label=add]
+	25 [label=mul]
 	25 -> 26
-	26 [label=0]
+	26 [label=2]
 	25 -> 27
 	27 [label=2]
 	24 -> 28
@@ -62,49 +62,121 @@ best_of_run attained at gen 6 and has error=0.0"]
 	28 -> 29
 	29 [label=0]
 	28 -> 30
-	30 [label=2]
-	23 -> 31
-	31 [label=mul]
+	30 [label=mul]
+	30 -> 31
+	31 [label=sub]
 	31 -> 32
-	32 [label=add]
-	32 -> 33
-	33 [label=2]
-	32 -> 34
-	34 [label=2]
-	31 -> 35
-	35 [label=mul]
+	32 [label=0]
+	31 -> 33
+	33 [label=0]
+	30 -> 34
+	34 [label=sub]
+	34 -> 35
+	35 [label=sub]
 	35 -> 36
-	36 [label=-1]
+	36 [label=2]
 	35 -> 37
-	37 [label=-2]
-	22 -> 38
-	38 [label=sub]
-	38 -> 39
-	39 [label=mul]
-	39 -> 40
-	40 [label=add]
+	37 [label=sub]
+	37 -> 38
+	38 [label=0]
+	37 -> 39
+	39 [label=0]
+	34 -> 40
+	40 [label=mul]
 	40 -> 41
-	41 [label=1]
+	41 [label=2]
 	40 -> 42
-	42 [label=-2]
-	39 -> 43
-	43 [label=add]
-	43 -> 44
-	44 [label=-2]
-	43 -> 45
-	45 [label=2]
-	38 -> 46
-	46 [label=add]
+	42 [label=mul]
+	42 -> 43
+	43 [label=-1]
+	42 -> 44
+	44 [label=sub]
+	44 -> 45
+	45 [label=sub]
+	45 -> 46
+	46 [label=mul]
 	46 -> 47
-	47 [label=add]
-	47 -> 48
-	48 [label=-1]
-	47 -> 49
-	49 [label=2]
-	46 -> 50
-	50 [label=mul]
-	50 -> 51
-	51 [label=2]
-	50 -> 52
-	52 [label=-1]
+	47 [label=2]
+	46 -> 48
+	48 [label=0]
+	45 -> 49
+	49 [label=0]
+	44 -> 50
+	50 [label=2]
+	23 -> 51
+	51 [label=mul]
+	51 -> 52
+	52 [label=mul]
+	52 -> 53
+	53 [label=1]
+	52 -> 54
+	54 [label=-2]
+	51 -> 55
+	55 [label=sub]
+	55 -> 56
+	56 [label=sub]
+	56 -> 57
+	57 [label=mul]
+	57 -> 58
+	58 [label=2]
+	57 -> 59
+	59 [label=0]
+	56 -> 60
+	60 [label=0]
+	55 -> 61
+	61 [label=2]
+	22 -> 62
+	62 [label=-2]
+	21 -> 63
+	63 [label=mul]
+	63 -> 64
+	64 [label=2]
+	63 -> 65
+	65 [label=mul]
+	65 -> 66
+	66 [label=-1]
+	65 -> 67
+	67 [label=sub]
+	67 -> 68
+	68 [label=sub]
+	68 -> 69
+	69 [label=mul]
+	69 -> 70
+	70 [label=2]
+	69 -> 71
+	71 [label=0]
+	68 -> 72
+	72 [label=0]
+	67 -> 73
+	73 [label=2]
+	10 -> 74
+	74 [label=mul]
+	74 -> 75
+	75 [label=mul]
+	75 -> 76
+	76 [label=1]
+	75 -> 77
+	77 [label=-2]
+	74 -> 78
+	78 [label=sub]
+	78 -> 79
+	79 [label=sub]
+	79 -> 80
+	80 [label=mul]
+	80 -> 81
+	81 [label=mul]
+	81 -> 82
+	82 [label=1]
+	81 -> 83
+	83 [label=2]
+	80 -> 84
+	84 [label=0]
+	79 -> 85
+	85 [label=0]
+	78 -> 86
+	86 [label=2]
+	9 -> 87
+	87 [label=-2]
+	8 -> 88
+	88 [label=x]
 }
